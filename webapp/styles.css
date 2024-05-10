@@ -1,57 +1,109 @@
+/* 设置全局样式 */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  box-sizing: border-box; /* 使用border-box盒模型 */
+  margin: 0; /* 设置外边距为0 */
+  padding: 0; /* 设置内边距为0 */
 }
 
+/* 定义容器样式 */
 .container {
-  max-width: 960px;
-  margin: 0 auto;
+  max-width: 960px; /* 设置容器的最大宽度为960像素 */
+  margin: 0 auto; /* 水平居中 */
 }
 
+/* 定义行样式 */
 .row {
-  display: flex;
+  display: flex; /* 使用弹性布局 */
 }
 
+/* 定义列样式 */
 .col-3,
 .col-9,
 .col-12 {
-  padding: 1em;
+  padding: 1em; /* 设置内边距为1em */
 }
 
+/* 定义3列样式 */
 .col-3 {
-  flex: 25%;
-  background-color: #f8f9fa;
-  color: #343a40;
+  flex: 25%; /* 占据父容器的25%宽度 */
+  background-color: #f8f9fa; /* 设置背景颜色为#f8f9fa */
+  color: #343a40; /* 设置文字颜色为#343a40 */
 }
 
+/* 定义9列样式 */
 .col-9 {
-  flex: 75%;
+  flex: 75%; /* 占据父容器的75%宽度 */
 }
 
+/* 定义12列样式 */
 .col-12 {
-  flex: 100%;
+  flex: 100%; /* 占据父容器的100%宽度 */
 }
 
+/* 定义头部导航样式 */
 header nav {
-  background-color: #343a40;
-  color: #f8f9fa;
+  background-color: #343a40; /* 设置背景颜色为#343a40 */
+  color: #f8f9fa; /* 设置文字颜色为#f8f9fa */
 }
 
+/* 定义头部导航链接样式 */
 header nav a {
-  margin-right: 1em;
-  color: #f8f9fa;
-  text-decoration: none;
+  margin-right: 1em; /* 设置右边距为1em */
+  color: #f8f9fa; /* 设置文字颜色为#f8f9fa */
+  text-decoration: none; /* 去除下划线 */
 }
 
+/* 定义头部导航链接悬停样式 */
 header nav a:hover {
-  color: #007bff;
+  color: #007bff; /* 设置鼠标悬停时的文字颜色为#007bff */
 }
 
+/* 定义注销按钮样式 */
 .logout {
-  margin-left: auto;
+  margin-left: auto; /* 设置左边距为auto，将元素推到右侧 */
 }
 
+/* 定义页脚样式 */
 footer {
-  text-align: center;
+  text-align: center; /* 文字居中对齐 */
+}
+
+/* 定义侧边栏样式 */
+aside.col-3 {
+  width: 25%; /* 设置宽度为25% */
+  padding: 15px; /* 设置内边距为15px */
+  background-color: #f8f9fa; /* 设置背景颜色为#f8f9fa */
+  border-radius: 5px; /* 设置边框圆角为5px */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* 设置阴影效果 */
+}
+
+/* 定义侧边栏标题样式 */
+aside.col-3 h3,
+aside.col-3 h4 {
+  color: #343a40; /* 设置文字颜色为#343a40 */
+  font-size: 1.25em; /* 设置字体大小为1.25em */
+  margin-bottom: 10px; /* 设置下边距为10px */
+}
+
+/* 定义侧边栏列表样式 */
+aside.col-3 ul {
+  list-style-type: none; /* 去除列表样式 */
+  padding-left: 0; /* 设置左内边距为0 */
+}
+
+/* 定义侧边栏列表项样式 */
+aside.col-3 ul li {
+  margin-bottom: 10px; /* 设置下边距为10px */
+}
+
+/* 定义侧边栏链接样式 */
+aside.col-3 ul li a {
+  color: #007bff; /* 设置文字颜色为#007bff */
+  text-decoration: none; /* 去除下划线 */
+}
+
+/* 定义侧边栏链接悬停样式 */
+aside.col-3 ul li a:hover {
+  color: #0056b3; /* 设置鼠标悬停时的文字颜色为#0056b3 */
+  text-decoration: underline; /* 添加下划线 */
 }
