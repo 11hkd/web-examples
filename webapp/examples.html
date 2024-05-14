@@ -4,33 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>i love web</title>
+
     <style>
       /*清除默认样式 通配符*/
       * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
+        padding: 0; /*四周内边距都为0，padding-top、padding-right、padding-bottom 或 padding-left，可以选择不同位置添加内边距*/
+        margin: 0; /*外边距，与内边距同理*/
+        box-sizing: border-box; /*全局取消元素内外边距，按 box 尺寸计算*/
       }
-
-      /*整体版心剧中*/
       .wrapper {
         max-width: 982px;
-        margin: 0 auto;
-        padding-top: 10px;
-        min-height: 100vh;
+        margin: 0 auto; /*.wrapper的外边距。0表示上下外边距为0，auto表示左右外边距自动计算，这样.wrapper就会在水平方向上居中。*/
+        padding-top: 20px; /*这个属性设置了.wrapper的上内边距为10像素。这意味着.wrapper的内容会距离顶部有10像素的空间。*/
+        min-height: 100vh; /*.wrapper的最小高度为100vh，vh是视口高度单位，100vh就是屏幕的高度。这样设置后，即使.wrapper的内容高度不足屏幕高度，.wrapper的高度也会至少为屏幕的高度。*/
       }
 
-      /*header区域 包括logo 导航 搜索功能等*/
       .header {
         /*从设计图可以看出header区域有导航和logout
- wigth=982,hight=58+13*2=84*/
+       wigth=982,hight=58+13*2=84*/
         /*内边距统一算13px*/
         width: 100%;
         height: 84px;
         text-align: center;
-        background-color: #ffee99;
-        font-size: 1.2rem;
-        padding: 13px;
+        background-color: #99ffca;
+        font-size: 1.4rem;
+        padding: 10px;
         border-style: solid;
         border-width: 1px;
         border-color: #efbb49;
@@ -39,7 +37,7 @@
       /*导航*/
       .header .Navigation {
         background-color: #343135;
-        justify-content: flex-start;
+        justify-content: flex-start; /*排列在导航栏开始的位置*/
       }
       .header .Navigation ul {
         display: flex;
@@ -49,7 +47,7 @@
 
       .header .Navigation ul li {
         list-style: none;
-        display: inline-block;
+        display: inline-block; /**/
         width: 13%;
       }
       .header .Navigation ul li a {
@@ -70,10 +68,10 @@
         width: 100%;
         height: 510px;
         padding: 13px;
-        background-color: #ffee99;
+        background-color: #ffce99;
         display: flex;
-        position: relative;
-        border-style: solid;
+        position: sticky;
+        border-style: solid; /*这个属性设置了.content的边框样式为实线。*/
         border-width: 1px;
         border-color: #efbb49;
         border-radius: 8px;
@@ -82,11 +80,12 @@
       .content .sidebar {
         width: 23.82%;
         height: 485px;
-        padding: 13px;
+        padding: 6px;
+        background-color: rgba(255, 251, 0, 0.64);
         color: #4e4e4b;
         border-style: solid;
         border-width: 1px;
-        border-color: #efbb49;
+        border-color: #ef4949;
         border-radius: 8px;
         display: flex;
         flex-direction: column; /*主轴方向换为竖直*/
@@ -100,19 +99,19 @@
         height: 55%;
       }
       /*在CSS中,给一个ID选择器加上 display: none; 属性意味着指定该ID所对应的HTML元素不应该在页面上显示,
-并且这个元素将会从文档流中移除。这意味着该元素不仅本身变得不可见,而且它原本占用的空间也会被释放,
-就好像它根本不存在于页面布局中一样。其他元素会无视这个元素的存在而重新排列,就像它被删除了一样。此外,被 display: none; 
-隐藏的元素也不会被屏幕阅读器等辅助技术读取,因此这对于完全隐藏某些内容非常有用,同时不影响网站的可访问性。*/
+      并且这个元素将会从文档流中移除。这意味着该元素不仅本身变得不可见,而且它原本占用的空间也会被释放,
+      就好像它根本不存在于页面布局中一样。其他元素会无视这个元素的存在而重新排列,就像它被删除了一样。此外,被 display: none;
+      隐藏的元素也不会被屏幕阅读器等辅助技术读取,因此这对于完全隐藏某些内容非常有用,同时不影响网站的可访问性。*/
 
       .content .sidebar ul {
         display: block;
         width: 20.5%;
-        position: absolute;
+        position: absolute; /*这个属性设置了ul元素的定位方式为绝对定位。在绝对定位下，ul元素的位置会相对于最近的非static定位的祖先元素（如果存在的话）进行定位。如果没有这样的祖先元素，那么它的位置将相对于<html>元素。元素的位置通过top、right、bottom和left属性进行指定。*/
       }
       .content .sidebar ul li {
         height: 51px;
         line-height: 60px;
-        background-color: #f1f1f1;
+        background-color: #ffe6fe78;
         font-size: 1.2rem;
         display: block;
         padding-left: 24px;
@@ -145,14 +144,15 @@
       /*文本区域*/
       .content .text {
         width: 76.18%;
-        height: 337px;
+        height: 485px;
         border-radius: 8px;
         color: #000;
+        background-color: rgba(98, 80, 255, 0.607);
         padding-top: 20px;
         padding: 18px;
         border-style: solid;
         border-width: 1px;
-        border-color: #efbb49;
+        border-color: #ff0000;
         border-radius: 8px;
       }
       .content .text p {
@@ -180,7 +180,7 @@
     </style>
   </head>
   <body>
-    <div class="test1 wrapper">
+    <div class="wrapper">
       <!-- Header -->
       <div class="header">
         <div class="Navigation">
@@ -200,11 +200,11 @@
       </div>
       <div class="content">
         <div class="sidebar">
-          <!-- 侧边栏做成手风车式 -->
+          <!-- aside -->
           <div class="yun-manage">
             <ul>
               <li class="manage">
-                <a href="#"><h2>云技术管理</h2></a>
+                <a href="https://www.baidu.com/?tn=15007414_8_dg"><h2>云技术管理</h2></a>
               </li>
               <li><a href="#">云服务器</a></li>
               <li><a href="#">云数据库</a></li>
@@ -224,44 +224,42 @@
           </div>
         </div>
         <div class="text">
-          <h1>设计内容</h1>
-          <p>为各部分区域设计统一样式；全局取消元素内外编剧,按box尺寸计算</p>
-          <h3>需求0</h3>
-          <p>
-            基于当前HTML代码,弹性栅格布局页面,header/fooder占一行；main中sidebar最小宽度200px;
-            article占剩余全部。行中间空间不足元素不换行，由响应式布局决定小尺寸显示效果
-          </p>
-          <h3>上导航+1</h3>
-          <p>基于弹性布局，为header中的上导航添加背景色/悬浮字体等样式，且将logout推至最右侧</p>
-          <h3>左侧边栏+1</h3>
-          <p>为左侧边栏添加样式,添加背景色字体色/悬浮等等样式</p>
+          <h2>需求+设计提示</h2>
+          <p>为各部分区域设计统一样式；全局取消元素内外边距，按 box 尺寸计算</p>
+          <h2>需求 0</h2>
+          <p>基于当前 HTML 代码，按 12 栅格布局页面。</p>
+          <ul>
+            <li>Container 根容器居中最大宽度 960px</li>
+            <li>Row 弹性行容器</li>
+            <li>header/footer 各占 1 行 12 列</li>
+            <li>main 中 sidebar 占 3 列；article 占 9 列。</li>
+          </ul>
+          <h2>上导航+1</h2>
+          <p>header 中声明上导航，添加背景色/悬浮字体颜色等样式，且将 logout 推至最右侧</p>
+          <h2>页脚+1</h2>
+          <p>元素居中</p>
+          <h2>左侧边栏+1</h2>
+          <p>为左侧边栏添加样式，添加背景色/字体色/悬浮等等样式</p>
         </div>
       </div>
 
       <!-- 底部 -->
       <div class="bottom">
         <a
-          href="https://ccec.nefu.edu.cn/x_zy_b/rjgc.htm"
+          href="https://www.nefu.edu.cn/"
           target="_blank"
           class="link_hover"
-          title="跳转到东北林业大学软件工程专业">
+          title="跳转到东北林业大学官网">
           东北林业大学
         </a>
         <a
-          href="https://ccec.nefu.edu.cn/x_zy_b/rjgc.htm"
+          href="https://ccec.nefu.edu.cn"
           target="_blank"
           class="link_hover"
-          title="跳转到东北林业大学软件工程专业">
-          软件工程专业04班
-          <img src="./bottom1.png" alt="  " />
+          title="跳转到东北林业大学计控学院官网">
+          <p>软件工程专业</p>
         </a>
       </div>
     </div>
-
-    <!-- proplem:
-1.导航处,.header a:hover,无法直接让li里面的a鼠标悬停变色；.header .Navigation a:hover 可以。
-2.侧边栏处,做不出手风车式,无法把第二个管理推下去。而且必须将第一个label收起才能让第二个显示。
-3.侧边栏和内容区域是否为同级大盒子？(此时我将它们弄为一个大盒子是因为,侧边栏在点击某选项,内容区域会弹出选项对应的内容)
-4.栅格的响应式布局？bootstrap？还是说用flex来分配盒子的占比？ -->
   </body>
 </html>
