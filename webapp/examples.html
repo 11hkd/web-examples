@@ -140,6 +140,31 @@
         transform: scale(1);
         border-radius: 0px;
       }
+      /* 修改链接的样式 */
+      .header .Navigation ul li a,
+      .content .sidebar ul li a {
+        display: block; /* 使链接占据整个可点击区域 */
+        width: 100%; /* 链接宽度设为100% */
+        height: 100%; /* 链接高度设为100% */
+      }
+      .content .sidebar .yun-manage h2 {
+        /*不是链接不是链接*/
+        background-color: #ebd90f; /* 修改背景颜色 */
+        color: #333; /* 修改文字颜色 */
+        padding: 10px; /* 添加内边距 */
+        border-radius: 5px; /* 添加圆角 */
+        border: 1px solid rgba(197, 200, 24, 0.75); /* 添加边框 */
+        text-align: center; /* 文字居中 */
+      }
+      .content .sidebar .an-manage h2 {
+        /*不是链接不是链接*/
+        background-color: #c0cd0ad7; /* 修改背景颜色 */
+        color: #333; /* 修改文字颜色 */
+        padding: 10px; /* 添加内边距 */
+        border-radius: 5px; /* 添加圆角 */
+        border: 1px solid #938d1b; /* 添加边框 */
+        text-align: center; /* 文字居中 */
+      }
 
       /*文本区域*/
       .content .text {
@@ -202,24 +227,40 @@
         <div class="sidebar">
           <!-- aside -->
           <div class="yun-manage">
+            <T1 class="manage">
+              <h2>云技术管理</h2>
+            </T1>
             <ul>
-              <li class="manage">
-                <a href="https://www.baidu.com/?tn=15007414_8_dg"><h2>云技术管理</h2></a>
+              <li>
+                <a href="https://www.baidu.com/?tn=15007414_8_dg">云服务器</a>
               </li>
-              <li><a href="#">云服务器</a></li>
-              <li><a href="#">云数据库</a></li>
-              <li><a href="#">负载均衡</a></li>
+              <li>
+                <a href="https://www.baidu.com/?tn=15007414_8_dg">云数据库</a>
+              </li>
+              <li>
+                <a href="https://www.baidu.com/?tn=15007414_8_dg">负载均衡</a>
+              </li>
             </ul>
           </div>
           <div class="an-manage">
+            <T2 class="manage">
+              <h2>安全管理</h2>
+            </T2>
             <ul>
-              <li class="manage">
-                <a href="#"><h2>安全管理</h2></a>
+              <li>
+                <a href="https://www.baidu.com/?tn=15007414_8_dg">云盾控制台</a>
               </li>
-              <li><a href="#">云盾控制台</a></li>
-              <li><a href="#">DDoS高仿IP</a></li>
-              <li><a href="#">Web应用防火墙</a></li>
-              <li><a href="#">CA证书服务</a></li>
+              <li>
+                <a href="https://www.baidu.com/?tn=15007414_8_dg">DDoS高仿IP</a>
+              </li>
+              <li>
+                <a href="https://www.baidu.com/?tn=15007414_8_dg"
+                  >Web应用防火墙</a
+                >
+              </li>
+              <li>
+                <a href="https://www.baidu.com/?tn=15007414_8_dg">CA证书服务</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -235,7 +276,10 @@
             <li>main 中 sidebar 占 3 列；article 占 9 列。</li>
           </ul>
           <h2>上导航+1</h2>
-          <p>header 中声明上导航，添加背景色/悬浮字体颜色等样式，且将 logout 推至最右侧</p>
+          <p>
+            header 中声明上导航，添加背景色/悬浮字体颜色等样式，且将 logout
+            推至最右侧
+          </p>
           <h2>页脚+1</h2>
           <p>元素居中</p>
           <h2>左侧边栏+1</h2>
@@ -249,14 +293,16 @@
           href="https://www.nefu.edu.cn/"
           target="_blank"
           class="link_hover"
-          title="跳转到东北林业大学官网">
+          title="跳转到东北林业大学官网"
+        >
           东北林业大学
         </a>
         <a
           href="https://ccec.nefu.edu.cn"
           target="_blank"
           class="link_hover"
-          title="跳转到东北林业大学计控学院官网">
+          title="跳转到东北林业大学计控学院官网"
+        >
           <p>软件工程专业</p>
         </a>
       </div>
