@@ -25,27 +25,23 @@
       }
 
       .form-group {
-        display: flex; /* 设置弹性布局 */
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 18px; /* 减少标签的上边距 */
+        margin-top: px; /* 减少标签的下边距 */
       }
 
-      .form-control {
-        flex: 80%; /* 输入域占80% */
-        border: none;
-        border-bottom: 1px solid black;
-        outline: none;
-      }
       .form-label {
-        flex: 20%; /* 文本域占20% */
-        transition: all 0.2s ease; /* 添加过渡效果 */
-        text-align: left; /* 设置文本元素在左边对齐 */
+        transition: all 0.5s ease; /* 加快标签变小的速度 */
+        text-align: left;
+        font-size: 18px; /* 增大标签字体 */
       }
 
-      .form-control:focus + .form-label,
-      .form-control:not(:placeholder-shown) + .form-label {
-        margin-bottom: 30px; /* 当输入框获得焦点或者输入框内有内容时，通过增加下边距来推动标签向上移动 */
-      }
-      .form-group {
-        margin-bottom: 20px; /* 设置下边距为20px */
+      .move-up {
+        transform: translateY(-15px);
+        transition: all 0.3s ease;
+        font-size: 16px; /* 缩小标签字体 */
+        color: chartreuse;
       }
     </style>
   </head>
@@ -53,7 +49,7 @@
     <div class="main">
       <form>
         <div class="form-group">
-          <label for="exampleInputEmail1">学号</label>
+          <label for="exampleInputEmail1" class="form-label">账号*</label>
           <input
             type="email"
             class="form-control"
@@ -63,7 +59,7 @@
           />
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">密码</label>
+          <label for="exampleInputPassword1" class="form-label">密码*</label>
           <input
             type="password"
             class="form-control"
@@ -71,14 +67,32 @@
             required
           />
         </div>
-        <div class="form-group form-check">
+
+        <div class="form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-          <label class="form-check-label" for="exampleCheck1"
-            >Check me out</label
-          >
+          <label class="form-check-label" for="exampleCheck1">记住密码</label>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <br />
+        <button type="submit" class="btn btn-primary">登录</button>
       </form>
     </div>
+    <script>
+      // 获取所有的输入框和标签
+      var inputs = document.querySelectorAll(".form-control");
+      var labels = document.querySelectorAll(".form-label");
+
+      // 为每个输入框添加事件监听
+      inputs.forEach((input, index) => {
+        input.addEventListener("focus", function () {
+          labels[index].classList.add("move-up");
+        });
+
+        input.addEventListener("blur", function () {
+          if (input.value === "") {
+            labels[index].classList.remove("move-up");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
