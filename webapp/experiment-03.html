@@ -20,9 +20,6 @@
       }
 
       .header {
-        /*从设计图可以看出header区域有导航和logout
-       wigth=982,hight=58+13*2=84*/
-        /*内边距统一算13px*/
         width: 100%;
         height: 84px;
         text-align: center;
@@ -53,13 +50,14 @@
       .header .Navigation ul li a {
         /* padding-right: 30px; */
         line-height: 58px; /*与高保持一致->字居中*/
-        text-decoration: none; /*取消下划线*/
+        text-decoration: none;
         color: #ffffff;
       }
 
       .header .Navigation a:hover {
-        color: #0c59b0;
-        text-decoration: underline;
+        color: #10ea4a;
+        text-decoration: none;
+        transform: scale(1.1, 1.1);
       }
 
       /*侧边栏及其内容区域*/
@@ -98,10 +96,6 @@
         width: 100%;
         height: 55%;
       }
-      /*在CSS中,给一个ID选择器加上 display: none; 属性意味着指定该ID所对应的HTML元素不应该在页面上显示,
-      并且这个元素将会从文档流中移除。这意味着该元素不仅本身变得不可见,而且它原本占用的空间也会被释放,
-      就好像它根本不存在于页面布局中一样。其他元素会无视这个元素的存在而重新排列,就像它被删除了一样。此外,被 display: none;
-      隐藏的元素也不会被屏幕阅读器等辅助技术读取,因此这对于完全隐藏某些内容非常有用,同时不影响网站的可访问性。*/
 
       .content .sidebar ul {
         display: block;
@@ -129,14 +123,14 @@
       .content .sidebar ul li a {
         text-decoration: none; /*取消下划线*/
         color: #4e4e4b;
-        transition: transform 0.4s;
+        transition: transform 0.6s;
       }
       .content .sidebar ul li:hover {
-        background-color: #3184bf;
-        transform: scale(1.05);
+        background-color: #ecf406;
+        transform: scale(1.25);
         border-radius: 3px;
       }
-      .content .sidebar ul .manage:hover {
+      【【【【【【【 .content .sidebar ul .manage:hover {
         transform: scale(1);
         border-radius: 0px;
       }
@@ -202,6 +196,10 @@
         color: #000;
         text-decoration: none;
       }
+      .bottom a:hover {
+        color: #df1b53;
+        text-decoration: underline;
+      }
     </style>
   </head>
   <body>
@@ -265,25 +263,16 @@
           </div>
         </div>
         <div class="text">
-          <h2>需求+设计提示</h2>
-          <p>为各部分区域设计统一样式；全局取消元素内外边距，按 box 尺寸计算</p>
-          <h2>需求 0</h2>
-          <p>基于当前 HTML 代码，按 12 栅格布局页面。</p>
-          <ul>
-            <li>Container 根容器居中最大宽度 960px</li>
-            <li>Row 弹性行容器</li>
-            <li>header/footer 各占 1 行 12 列</li>
-            <li>main 中 sidebar 占 3 列；article 占 9 列。</li>
-          </ul>
-          <h2>上导航+1</h2>
-          <p>
-            header 中声明上导航，添加背景色/悬浮字体颜色等样式，且将 logout
-            推至最右侧
-          </p>
-          <h2>页脚+1</h2>
-          <p>元素居中</p>
-          <h2>左侧边栏+1</h2>
-          <p>为左侧边栏添加样式，添加背景色/字体色/悬浮等等样式</p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta
+          veniam, sapiente quam quibusdam dolores quo cumque voluptate vero
+          ratione vitae ullam aspernatur, beatae labore corrupti est, magni
+          impedit. Ea, eaque. Aliquam repellat non consectetur tempora ad
+          sapiente est molestiae, libero, modi veritatis temporibus et nemo
+          inventore quidem provident velit deleniti possimus esse eaque animi.
+          Delectus asperiores aspernatur ratione nulla atque! Eius, ut amet fuga
+          repellendus odit quia ipsa est, quis nulla reprehenderit nobis ullam
+          ducimus at tempora distinctio sint, sed odio rerum voluptatibus?
+          Excepturi a harum laboriosam! Non, dicta dignissimos.
         </div>
       </div>
 

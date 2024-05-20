@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main {
+        border: 2px solid black;
+        border-radius: 3px;
+        margin: 50px auto;
+        border-color: rgba(59, 6, 234, 0.425);
+        padding: 50px;
+      }
+      .form-control {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid black;
+        outline: none;
+      }
+
+      .form-control:focus {
+        border-bottom: 2px solid rgb(28, 230, 106);
+      }
+
+      .form-group {
+        display: flex; /* 设置弹性布局 */
+      }
+
+      .form-control {
+        flex: 80%; /* 输入域占80% */
+        border: none;
+        border-bottom: 1px solid black;
+        outline: none;
+      }
+      .form-label {
+        flex: 20%; /* 文本域占20% */
+        transition: all 0.2s ease; /* 添加过渡效果 */
+        text-align: left; /* 设置文本元素在左边对齐 */
+      }
+
+      .form-control:focus + .form-label,
+      .form-control:not(:placeholder-shown) + .form-label {
+        margin-bottom: 30px; /* 当输入框获得焦点或者输入框内有内容时，通过增加下边距来推动标签向上移动 */
+      }
+      .form-group {
+        margin-bottom: 20px; /* 设置下边距为20px */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">学号</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">密码</label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            required
+          />
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <label class="form-check-label" for="exampleCheck1"
+            >Check me out</label
+          >
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

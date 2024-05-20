@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        color: writen;
+        border-radius: 3px;
+        padding-inline: 5px;
+      }
+      p span.success {
+        background-color: green;
+      }
+      p span.failed {
+        background-color: red;
+      }
+      /*table CSS*/
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      table th,
+      table td {
+        border-bottom: 1px solid #000;
+        padding: 10px;
+        text-align: center;
+      }
+      table tr:nth-child(odd) {
+        background-color: lightgray;
+      } /*奇数行代码：table tr:nth-child(odd)*/
+      table tr:nth-child(even) {
+        background-color: white;
+      } /*偶数行代码：table tr:nth-child(even)*/
+      a.btn1 {
+        background-color: green;
+        color: white;
+        text-decoration: none;
+        padding: 4px;
+        border-radius: 3px;
+      }
+      a.btn2 {
+        background-color: red;
+        color: white;
+        text-decoration: none;
+        padding: auto;
+        border-radius: 3px;
+        padding: 4px;
+      }
+      a.btn1:hover {
+        background-color: lightgreen;
+      }
+      a.btn2:hover {
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="come">
+      <p>
+        学生信息导入提示:
+        <br />
+        <span class="success">学生信息导入成功</span>
+        <br />
+        <span class="failed">学生信息导入失败</span>
+      </p>
+      <table>
+        <thread>
+          <tr>
+            <th>班级</th>
+            <th>姓名</th>
+            <th>学号</th>
+            <th>操作</th>
+          </tr>
+          <tr>
+            <td>软工4班</td>
+            <td>韩大壮</td>
+            <td>123456</td>
+            <td>
+              <a href="#" class="btn1">修改</a>
+              <a href="#" class="btn2">删除</a>
+            </td>
+          </tr>
+          <tr>
+            <td>软工4班</td>
+            <td>何定贤</td>
+            <td>123356</td>
+            <td>
+              <a href="#" class="btn1">修改</a>
+              <a href="#" class="btn2">删除</a>
+            </td>
+          </tr>
+          <tr>
+            <td>软工4班</td>
+            <td>陈秋樾</td>
+            <td>123426</td>
+            <td>
+              <a href="#" class="btn1">修改</a>
+              <a href="#" class="btn2">删除</a>
+            </td>
+          </tr>
+          <tr>
+            <td>软工4班</td>
+            <td>程天鑫</td>
+            <td>123412</td>
+            <td>
+              <a href="#" class="btn1">修改</a>
+              <a href="#" class="btn2">删除</a>
+            </td>
+          </tr>
+        </thread>
+      </table>
+    </div>
+  </body>
+</html>

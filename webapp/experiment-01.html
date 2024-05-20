@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="self-information">
+   <form action="/register" methon="post">
+    username:
+<input type="text",name="username"></input>
+<br>
+    password:
+    <input type="password",name="password"></input>
+    <br>
+<label>female<input type="radio" name="sex" value="male"></label>
+<br>
+<label>  male<input type="radio" name="sex" value="female"></label>
+<br>
+Birthday:
+<input type="date">
+<br>
+籍贯：
+<input list="location">
+<datalist id="location">
+<option value="Beijing">Beijing</option>
+<option value="Shanghai">Shanghai</option>
+<option value="Guangdong">Guangdong</option>
+<option value="Zhejiang">Zhejiang</option>
+<option value="Jiangsu">Jiangsu</option>
+<option value="Fujian">Fujian</option>
+<option value="Shandong">Shandong</option>
+<option value="Hubei">Hubei</option>
+<option value="Henan">Henan</option>
+<option value="Hunan">Hunan</option>
+<option value="Sichuan">Sichuan</option>
+<option value="Chongqing">Chongqing</option>
+<option value="Anhui">Anhui</option>
+<option value="Liaoning">Liaoning</option>
+<option value="Jilin">Jilin</option>
+<option value="Heilongjiang">Heilongjiang</option>
+<option value="Shaanxi">Shaanxi</option>
+<option value="Gansu">Gansu</option>
+<option value="Yunnan">Yunnan</option>
+<option value="Guizhou">Guizhou</option>
+<option value="Hainan">Hainan</option>
+<option value="Shanxi">Shanxi</option>
+</datalist>
+<br>
+学历：
+<input list="degrees">
+<datalist id="degrees">
+  <option value="大学"></option>
+  <option value="高中"></option>
+  <option value="初中"></option>
+  </datalist>
+    </form>
+    </div>
+    <div>
+      <p>其他信息</p>
+      喜欢课程：
+      <ul>
+          <label><input type="checkbox" checked>Web开发技术</label>
+          <br>
+          <label><input type="checkbox">Java程序设计</label>
+          <br>
+          <label><input type="checkbox">数据库原理</label>
+          <br>
+          <label><input type="checkbox">系统分析与测试</label>
+          <br>
+      </ul>
+      照片：<input id="photo" type="file" accept=".jpg, .png">
+    </div>
+    <button type="reset">重置</button><br>
+    <button type="submit">提交</button>
+  </body>
+</html>
