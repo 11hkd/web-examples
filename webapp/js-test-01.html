@@ -6,10 +6,13 @@
     <title>课程查询</title>
     <style>
       .main {
-        margin: 100px;
-        padding: 100px;
+        margin: 200px;
+        padding: 20px;
         border: 2px solid rgb(23, 160, 195);
         border-radius: 3px;
+      }
+      #name {
+        display: inline-flex;
       }
     </style>
   </head>
@@ -24,26 +27,35 @@
         <option value="python">python</option>
       </select>
       <br />
-      <span>授课老师姓名：</span>
+      <span id="name">授课老师姓名：</span>
       <div id="teacherName"></div>
     </div>
     <div class="check"></div>
     <script>
+      // 定义一个数组，其中包含了课程的信息，每个课程都是一个对象，包含id、课程名称和教师名称
       const courses = [
         { id: 1, courseName: "Web", teacherName: "SUN" },
         { id: 2, courseName: "Java", teacherName: "BO" },
         { id: 3, courseName: "C/C++", teacherName: "LI" },
         { id: 4, courseName: "Python", teacherName: "ZHANG" },
       ];
-
+      /*先获取页面元素，const selectElement = document.getElementById("classname");*/
+      // 获取页面中的元素，这里获取的是课程名称的下拉菜单和教师名称的显示区域
       const selectElement = document.getElementById("classname");
       const teacherNameElement = document.getElementById("teacherName");
 
+      // 为课程名称的下拉菜单添加事件监听器，当用户选择了某个选项后，会触发这个函数
       selectElement.addEventListener("change", function () {
-        const selectedValue = selectElement.value.toLowerCase(); // 转换为小写以匹配HTML中的值
+        //change事件是在元素的值发生改变时触发
+        // 获取用户选择的课程名称，并转换为小写，以便于和courses数组中的课程名称进行比较
+        const selectedValue = selectElement.value.toLowerCase();
+        /*selectElement.value是用户所选择的值*/
+        // 在courses数组中查找用户选择的课程
         const selectedCourse = courses.find(
-          (course) => course.courseName.toLowerCase() === selectedValue // 使用courseName进行比较
+          (course) => course.courseName.toLowerCase() === selectedValue
         );
+
+        // 如果在courses数组中找到了用户选择的课程，就显示该课程的教师名称，否则显示"NULL"
         if (selectedCourse) {
           teacherNameElement.textContent = `${selectedCourse.teacherName}`;
         } else {

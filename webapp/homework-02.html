@@ -3,7 +3,148 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <style>
+      /* Global styles */
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Root container */
+      .container {
+        max-width: 1200px; /* Adjust container size */
+        margin: 0 auto;
+      }
+
+      /* Flex container */
+      .row {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      /* Card container */
+      .card {
+        flex: 1;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+        position: relative;
+      }
+
+      .card:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Card header container */
+      .card-header {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .card-header img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 50%;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        opacity: 0.6;
+      }
+
+      .card:hover .card-header img {
+        transform: translateY(-100px) scale(1); /* Move up and shrink */
+        opacity: 0.8; /* Increase opacity */
+      }
+
+      /* Card content container */
+      .card-content {
+        text-align: justify;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+      }
+
+      .card:hover .card-content {
+        opacity: 1;
+      }
+
+      /* Card footer container */
+      .card-footer {
+        background-color: #1dcf91;
+        text-align: center;
+        padding: 10px;
+        margin: 5px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+
+      .card:hover .card-footer {
+        transform: translateY(10px); /* Move down */
+        opacity: 1; /* Increase opacity */
+      }
+
+      .card-footer a {
+        color: rgb(227, 216, 22);
+        text-decoration: none;
+      }
+
+      .card-footer a:hover {
+        color: #ffffff97;
+        transition: transform 0.9s ease;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="card">
+          <div class="card-header">
+            <img src="https://picsum.photos/200/200" alt="Random Image" />
+          </div>
+          <div class="card-content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec
+              justo euismod, bibendum libero vel, aliquet libero.
+            </p>
+          </div>
+          <div class="card-footer">
+            <a href="#">Learn More</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <img src="https://picsum.photos/200/200" alt="Random Image" />
+          </div>
+          <div class="card-content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec
+              justo euismod, bibendum libero vel, aliquet libero.
+            </p>
+          </div>
+          <div class="card-footer">
+            <a href="#">Learn More</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <img src="https://picsum.photos/200/200" alt="Random Image" />
+          </div>
+          <div class="card-content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec
+              justo euismod, bibendum libero vel, aliquet libero.
+            </p>
+          </div>
+          <div class="card-footer">
+            <a href="#">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

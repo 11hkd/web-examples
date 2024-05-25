@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main {
+        border: 2px solid #000;
+        border-radius: 3px;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+        padding: 50px;
+      }
+      .ps {
+        margin-top: 50px;
+        display: flex;
+        border: 1px solid #000;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <span>请输入搜索内容：</span>
+      <span><input type="text" id="myInput" /></span>
+    </div>
+    <div class="ps">
+      <span>基本需求：当 2s 后输入框没有输入时，将输入字母转为大写</span>
+      <span
+        >额外实现：当输入框没有焦点时，直接触发监听事件，将字母转为大写</span
+      >
+    </div>
+    <script>
+      // 封装一个函数来检查并转换输入内容为大写,也就是大写转换，通过封装函数来实现
+      function checkAndUppercaseInput() {
+        const input = document.getElementById("myInput");
+        if (input.value.trim() !== "") {
+          // 确保输入框不为空
+          input.value = input.value.toUpperCase(); // 转换为大写
+        }
+      }
+
+      // 封装一个函数来设置定时器
+      function setTimer(input, delay) {
+        /* // 清除之前可能存在的定时器
+        if (input.timerId) {
+          clearTimeout(input.timerId);
+        }
+        */
+
+        // 设置新的定时器,zhiege计时器是在用户输入后2秒后执行checkAndUppercaseInput函数
+        input.timerId = setTimeout(() => {
+          checkAndUppercaseInput();
+        }, delay);
+      }
+
+      // 获取输入框元素
+      const input = document.getElementById("myInput");
+
+      // 监听输入框的input事件（注意不是up/down事件，因为我们要检测的是值的改变）
+      input.addEventListener("input", () => {
+        // 每次输入时清除之前的定时器
+        setTimer(input, 2000); // 2秒后执行检查并转换大写
+      });
+
+      // 监听输入框的失去焦点事件，确保在失去焦点时也能触发转换
+      input.addEventListener("blur", () => {
+        setTimer(input, 2000);
+      });
+    </script>
+  </body>
+</html>
