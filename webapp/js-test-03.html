@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+      }
+      h3 {
+        color: #333;
+      }
+      #numberInput {
+        padding: 5px;
+        margin: 10px 0;
+        width: 200px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>利用spit()/join()实现千分位数字转换</h3>
+    <input
+      type="text"
+      id="numberInput"
+      onkeyup="formatNumber()"
+      placeholder="输入数字"
+    />
+    <p id="formattedNumber">转换结果：</p>
+
+    <script>
+      function formatNumber() {
+        var num = document.getElementById("numberInput").value;
+        var numStr = num.toString();
+        var result = numStr
+          .split("")
+          .reverse()
+          .join("")
+          .replace(/(\d{3})/g, "$1,") //关键一步，倒转后每三位加一个逗号
+          .split("")
+          .reverse()
+          .join("");
+        document.getElementById("formattedNumber").innerHTML =
+          result[0] === "," ? result.slice(1) : result;
+      }
+    </script>
+  </body>
+</html>

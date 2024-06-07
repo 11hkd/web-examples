@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+      }
+      #output {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        background-color: #fff;
+      }
+      #btn1,
+      #btn2,
+      #btn3 {
+        margin-top: 10px;
+        padding: 5px 10px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        background-color: #fff;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p id="ARRAY-NAME">
+        【id:"4",name:"韩凯迪"】
+        <br />
+        【id:"3",name:"陈秋樾"】
+        <br />
+        【id:"2",name:"何定贤"】
+        <br />
+        【id:"1",name:"程天鑫"】
+        <br />
+        【id:"1",name:"吴可凡"】
+        <br />
+        【id:"2",name:"韩凯迪"】
+        <br />
+        【id:"5",name:"韩凯迪"】
+      </p>
+    </div>
+    <button id="btn1">点击进行ID去重</button>
+    <button id="btn2">点击进行名字去重</button>
+    <button id="btn3">点击进行ID和名字去重，并按ID排序</button>
+    <div id="output"></div>
+    <script>
+      let objs = [
+        { id: "4", name: "韩凯迪" },
+        { id: "3", name: "陈秋樾" },
+        { id: "2", name: "何定贤" },
+        { id: "1", name: "程天鑫" },
+        { id: "1", name: "吴可凡" },
+        { id: "2", name: "韩凯迪" },
+        { id: "5", name: "韩凯迪" },
+      ];
+
+      function printObjs() {
+        const outputDiv = document.getElementById("output");
+        outputDiv.innerHTML = "";
+        objsx.forEach((obj) => {
+          outputDiv.innerHTML += `【id:"${obj.id}",name:"${obj.name}"】<br />`;
+        });
+      }
+
+      document.getElementById("btn1").addEventListener("click", function () {
+        const uniqueObjs = Array.from(new Set(objs.map((o) => o.id))).map(
+          (id) => objs.find((o) => o.id === id)
+        );
+        objsx = uniqueObjs;
+        printObjs();
+      });
+
+      document.getElementById("btn2").addEventListener("click", function () {
+        const uniqueObjs = Array.from(new Set(objs.map((o) => o.name))).map(
+          (name) => objs.find((o) => o.name === name)
+        );
+        objsx = uniqueObjs;
+        printObjs();
+      });
+
+      document.getElementById("btn3").addEventListener("click", function () {
+        let uniqueObjs = Array.from(new Set(objs.map((o) => o.id))).map((id) =>
+          objs.find((o) => o.id === id)
+        );
+        uniqueObjs = Array.from(new Set(uniqueObjs.map((o) => o.name))).map(
+          (name) => uniqueObjs.find((o) => o.name === name)
+        );
+        uniqueObjs.sort((a, b) => a.id - b.id);
+        objsx = uniqueObjs;
+        printObjs();
+      });
+    </script>
+  </body>
+</html>
